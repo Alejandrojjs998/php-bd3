@@ -1,6 +1,6 @@
 <?php
 
-$connect= new mysqli("localhost","root","","examen_2122");
+$connect= new mysqli("mysql","root","root","examen_2122");
 
 if ($connect) {
     $sql="SELECT * FROM datos_personales";
@@ -36,6 +36,7 @@ if ($connect) {
         <td><a href='modificar.php?dni=".$fila['dni']."'><img src='foto.png' alt=''></a></td>
         </tr>
         ";
+        $fila=$result->fetch_assoc();
     }
     echo"</table>";
 }else{
